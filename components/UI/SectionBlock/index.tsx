@@ -1,0 +1,8 @@
+import styled from "styled-components";
+
+export default styled.div`
+  display: inline-block;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  padding: 12px;
+`;
