@@ -1,6 +1,12 @@
-import styled from "styled-components";
+import styled, { CSSProperties, CSSProp } from "styled-components";
 
-export default styled.div`
+interface Props {
+  style?: CSSProp;
+}
+
+export default styled.div<Props>`
+  ${({ style }) => style ?? {}};
+  width: 300px;
   display: inline-block;
   border: 1px solid #c0c0c0;
   border-radius: 5px;

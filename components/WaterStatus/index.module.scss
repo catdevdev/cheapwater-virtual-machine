@@ -1,0 +1,23 @@
+.wrapper {
+}
+
+.waterBlock {
+  width: 85px;
+  height: 360px;
+  background: #c4c4c4;
+
+  display: flex;
+  align-items: flex-end;
+}
+.fill {
+  flex: 1;
+  background: #67c8ff;
+  height: 10%;
+  transition: 1s height ease;
+}
+
+.waterBalanceText {
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}

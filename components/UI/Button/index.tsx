@@ -9,7 +9,11 @@ interface Props
 
 export default ({ ...props }: Props) => {
   return (
-    <Button style={{ height: 24, lineHeight: 0 }} {...props}>
+    <Button
+      {...props}
+      color="primary"
+      style={{ height: 24, lineHeight: 0, ...props.style }}
+    >
       {props.children}
     </Button>
   );
