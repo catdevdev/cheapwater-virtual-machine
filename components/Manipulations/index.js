@@ -4,11 +4,11 @@ import c from "./index.module.scss";
 /* 0 */
 import { Row, Col, Label, Input } from "reactstrap";
 /* 1 */
-import Container from "../../components/UI/Container";
-import SectionBlock from "../../components/UI/SectionBlock";
-import Button from "../../components/UI/Button";
+import Container from "../UI/Container";
+import SectionBlock from "../UI/SectionBlock";
+import Button from "../UI/Button";
 
-const Manipulation = () => {
+const Manipulations = () => {
   return (
     <div className={c.wrapper}>
       <SectionBlock style={{ marginBottom: 14 }}>
@@ -33,4 +33,4 @@ const Manipulation = () => {
   );
 };
 
-export default Manipulation;
+export default Manipulations;
