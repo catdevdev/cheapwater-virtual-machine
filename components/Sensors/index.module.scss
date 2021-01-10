@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+}
+
+.wrapper1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 28px;
+}
+
+.wrapper2 {
+  flex: 1;
+}
