@@ -9,11 +9,14 @@ import Container from "../components/UI/Container";
 import SectionBlock from "../components/UI/SectionBlock";
 import Button from "../components/UI/Button";
 /* componets */
+/* firstRow */
 import PourWater from "../components/PourWater";
 import Window from "../components/Window";
 import QRCode from "../components/QRCode";
 import WaterStatus from "../components/WaterStatus";
-import Manipulation from "../components/Manipulation";
+import Manipulation from "../components/Manipulations";
+/* secondsRow */
+import Sensors from "../components/Sensors";
 
 const Index = () => {
   return (
@@ -32,6 +35,9 @@ const Index = () => {
         <div style={{ marginLeft: 30 }} className={c.thirdColumn}>
           <Manipulation />
         </div>
+      </div>
+      <div className={c.secondRow}>
+        <Sensors />
       </div>
     </Container>
   );
