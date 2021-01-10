@@ -1,8 +1,7 @@
 .wrapper {
-  display: flex;
+  flex: 1;
 }
-
-.pourWaterBlock {
+.inner {
   display: flex;
   flex-direction: column;
 }

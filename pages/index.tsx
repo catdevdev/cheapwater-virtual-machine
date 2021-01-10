@@ -10,9 +10,10 @@ import SectionBlock from "../components/UI/SectionBlock";
 import Button from "../components/UI/Button";
 /* componets */
 import PourWater from "../components/PourWater";
+import Window from "../components/Window";
 import QRCode from "../components/QRCode";
 import WaterStatus from "../components/WaterStatus";
-import Window from "../components/Window";
+import Manipulation from "../components/Manipulation";
 
 const Index = () => {
   return (
@@ -27,6 +28,9 @@ const Index = () => {
         </div>
         <div style={{ marginLeft: 30 }} className={c.thirdColumn}>
           <WaterStatus />
+        </div>
+        <div style={{ marginLeft: 30 }} className={c.thirdColumn}>
+          <Manipulation />
         </div>
       </div>
     </Container>
