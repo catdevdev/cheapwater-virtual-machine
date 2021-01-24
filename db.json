@@ -1,6 +1,16 @@
 {
-    "statusMachine": {
-        "turnedOn": false
-    }
-    
+  "statusMachine": {
+    "turnedOn": false
+  },
+  "waterStatus": {
+    "waterQuantity": 1000
+  },
+  "window": {
+    "inWindowCup": false,
+    "cupSize": 200,
+    "splosh": 10
+  },
+  "qrCode": {
+    "code": "https://cheapwater.net/qrcode_redirect/4d450f18-94b9-47da-adfa-11320348c9d1"
+  }
 }
