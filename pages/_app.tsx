@@ -4,6 +4,9 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import GlobalStyles from "../theme/globalStyles";
 import "bootstrap/dist/css/bootstrap.min.css";
+/* redux */
+import { Provider } from "react-redux";
+import {store} from '../redux/'
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
