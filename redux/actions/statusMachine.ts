@@ -4,22 +4,22 @@ import { Dispatch } from "redux";
 import { statusMachinePatch } from "./../api/statusMachine";
 /* types */
 import { ActionTypes } from "../actiontypes/index";
-import { StatusMachineI } from "../api/statusMachine";
+import { StatusMachine } from "../api/statusMachine";
 
-interface TurnOnMachineAction {
+export interface TurnOnMachineActionI {
   type: ActionTypes.TurnOnMachine;
-  payload: StatusMachineI;
+  payload: StatusMachine;
 }
 
-interface TurnOffMachineAction {
+export interface TurnOffMachineActionI {
   type: ActionTypes.TurnOffMachine;
-  payload: StatusMachineI;
+  payload: StatusMachine;
 }
 
 export const turnOnMachine = () => {
   return async (dispatch: Dispatch) => {
     const response = await statusMachinePatch({ turnedOn: true });
-    dispatch<TurnOnMachineAction>({
+    dispatch<TurnOnMachineActionI>({
       type: ActionTypes.TurnOnMachine,
       payload: response.data,
     });
@@ -29,7 +29,7 @@ export const turnOnMachine = () => {
 export const turnOffMachine = () => {
   return async (dispatch: Dispatch) => {
     const response = await statusMachinePatch({ turnedOn: false });
-    dispatch<TurnOffMachineAction>({
+    dispatch<TurnOffMachineActionI>({
       type: ActionTypes.TurnOffMachine,
       payload: response.data,
     });
