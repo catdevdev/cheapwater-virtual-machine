@@ -1,10 +1,8 @@
 import axios from "./index";
 
-interface StatusMachineI {
+export interface StatusMachineI {
   turnedOn: boolean;
 }
 
-export const statusMachinePatch = () =>
-  axios.patch<StatusMachineI>("/statusMachine");
-
-
+export const statusMachinePatch = (status: StatusMachineI) =>
+  axios.patch<StatusMachineI>("/statusMachine", status);

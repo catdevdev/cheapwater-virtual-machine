@@ -4,7 +4,6 @@ import QR from "qrcode.react";
 import c from "./index.module.scss";
 import { CSSProperties } from "styled-components";
 /*  */
-
 interface Props {
   style?: CSSProperties;
 }
