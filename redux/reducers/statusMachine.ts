@@ -1,15 +1,23 @@
 import { StatusMachine } from "./../api/statusMachine";
 import {
-  TurnOnMachineActionI,
-  TurnOffMachineActionI,
+  TurnOnMachineAction,
+  TurnOffMachineAction,
+  GetTurnOnMachineAction,
 } from "../actions/statusMachine";
 import { ActionTypes } from "./../actiontypes/index";
 
+type Action =
+  | GetTurnOnMachineAction
+  | TurnOnMachineAction
+  | TurnOffMachineAction;
+
 export const statusMachineReducer = (
   state: StatusMachine = { turnedOn: false },
-  action: TurnOnMachineActionI | TurnOffMachineActionI
+  action: Action
 ) => {
   switch (action.type) {
+    case ActionTypes.GetTurnOnMachine:
+      return action.payload;
     case ActionTypes.TurnOnMachine:
       return action.payload;
     case ActionTypes.TurnOffMachine:

@@ -4,5 +4,8 @@ export interface StatusMachine {
   turnedOn: boolean;
 }
 
-export const statusMachinePatch = (status: StatusMachine) =>
+export const patchStatusMachine = (status: StatusMachine) =>
   axios.patch<StatusMachine>("/statusMachine", status);
+
+export const getStatusMachine = () =>
+  axios.get<StatusMachine>("/statusMachine");
