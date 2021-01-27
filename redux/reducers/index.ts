@@ -1,11 +1,11 @@
 import { StatusMachine } from "./../api/statusMachine";
 import { combineReducers } from "redux";
-import { statusMachineReducer } from "./statusMachine";
+import { statusMachine } from "./statusMachine";
 
 export interface StoreState {
-  statusMachineReducer: StatusMachine;
+  statusMachine: StatusMachine;
 }
 
 export const rootReducer = combineReducers<StoreState>({
-  statusMachineReducer,
+  statusMachine,
 });

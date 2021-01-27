@@ -1,10 +1,10 @@
 /* imports */
 import { Dispatch } from "redux";
 /* api */
-import { patchStatusMachine, getStatusMachine } from "./../api/statusMachine";
+import { patchStatusMachine, getStatusMachine } from "../../api/statusMachine";
 /* types */
-import { ActionTypes } from "../actiontypes/index";
-import { StatusMachine } from "../api/statusMachine";
+import { ActionTypes } from "./types";
+import { StatusMachine } from "../../api/statusMachine";
 
 export interface GetTurnOnMachineAction {
   type: ActionTypes.GetTurnOnMachine;

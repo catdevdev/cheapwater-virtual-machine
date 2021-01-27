@@ -7,8 +7,21 @@ import { Row, Col, Label, Input } from "reactstrap";
 import Container from "../UI/Container";
 import SectionBlock from "../UI/SectionBlock";
 import Button from "../UI/Button";
+/* redux */
+import { useDispatch, useSelector } from "react-redux";
+import { StoreState } from "../../redux/reducers";
+import {
+  turnOnMachine,
+  turnOffMachine,
+  getTurnOnMachine,
+} from "../../redux/actions/statusMachine";
 
 const Manipulations = () => {
+  const turnedOn = useSelector<StoreState>(
+    (state) => state.statusMachine.turnedOn
+  );
+  const dispatch = useDispatch();
+
   return (
     <div className={c.wrapper}>
       <SectionBlock style={{ marginBottom: 14 }}>
@@ -25,8 +38,14 @@ const Manipulations = () => {
       </SectionBlock>
       <SectionBlock>
         <div className={c.inner}>
-          <Label>Turn off machine</Label>
-          <Button>Turn off</Button>
+          <Label> {turnedOn ? "Turn off" : "Turn on"} machine</Label>
+          <Button
+            onClick={() => {
+              dispatch(turnedOn ? turnOffMachine() : turnOnMachine());
+            }}
+          >
+            {turnedOn ? "Turn off" : "Turn on"}
+          </Button>
         </div>
       </SectionBlock>
     </div>

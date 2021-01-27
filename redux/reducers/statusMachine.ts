@@ -3,15 +3,10 @@ import {
   TurnOnMachineAction,
   TurnOffMachineAction,
   GetTurnOnMachineAction,
-} from "../actions/statusMachine";
-import { ActionTypes } from "./../actiontypes/index";
+} from "../actions";
+import { ActionTypes, Action } from "../actions/statusMachine/types";
 
-type Action =
-  | GetTurnOnMachineAction
-  | TurnOnMachineAction
-  | TurnOffMachineAction;
-
-export const statusMachineReducer = (
+export const statusMachine = (
   state: StatusMachine = { turnedOn: false },
   action: Action
 ) => {
