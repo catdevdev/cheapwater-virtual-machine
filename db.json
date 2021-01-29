@@ -1,6 +1,6 @@
 {
   "statusMachine": {
-    "turnedOn": true
+    "turnedOn": false
   },
   "waterStatus": {
     "waterQuantity": 1000
