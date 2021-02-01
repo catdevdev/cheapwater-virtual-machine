@@ -1,16 +1,20 @@
-export enum ActionTypes {
-  AddWaterInMachine,
-  RemoveWaterInMachine,
-  GetWaterInMachine,
-}
+export const ActionTypes: {
+  AddWaterInMachine;
+  SetWaterInMachine;
+  GetWaterInMachine;
+} = {
+  AddWaterInMachine: "AddWaterInMachine",
+  SetWaterInMachine: "SetWaterInMachine",
+  GetWaterInMachine: "GetWaterInMachine",
+};
 
 import {
-  GetTurnOnMachineAction,
-  TurnOnMachineAction,
-  TurnOffMachineAction,
+  GetWaterInMachineAction,
+  SetWaterInMachineAction,
+  AddWaterInMachineAction,
 } from "./index";
 
 export type Action =
-  | GetTurnOnMachineAction
-  | TurnOnMachineAction
-  | TurnOffMachineAction;
+  | GetWaterInMachineAction
+  | SetWaterInMachineAction
+  | AddWaterInMachineAction;

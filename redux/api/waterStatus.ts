@@ -1,11 +1,10 @@
 import axios from "./index";
 
 export interface WaterStatus {
-  turnedOn: boolean;
+  waterQuantity: number;
 }
 
-export const patchStatusMachine = (status: StatusMachine) =>
-  axios.patch<WaterStatus>("/statusMachine", status);
+export const patchWaterStatus = (waterQuantity: WaterStatus) =>
+  axios.patch<WaterStatus>("/waterStatus", waterQuantity);
 
-export const getStatusMachine = () =>
-  axios.get<WaterStatus>("/statusMachine");
+export const getWaterStatus = () => axios.get<WaterStatus>("/waterStatus");

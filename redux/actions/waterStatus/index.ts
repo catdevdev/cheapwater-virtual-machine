@@ -4,48 +4,34 @@ import { Dispatch } from "redux";
 import { patchStatusMachine, getStatusMachine } from "../../api/statusMachine";
 /* types */
 import { ActionTypes } from "./types";
-import { StatusMachine } from "../../api/statusMachine";
+import { WaterStatus } from "../../api/waterStatus";
 
-export interface GetTurnOnMachineAction {
-  type: ActionTypes.GetTurnOnMachine;
-  payload: StatusMachine;
+export interface GetWaterInMachineAction {
+  type: ActionTypes;
+}
+export interface SetWaterInMachineAction {
+  type: ActionTypes.SetWaterInMachine;
+  payload: WaterStatus;
+}
+export interface AddWaterInMachineAction {
+  type: ActionTypes.AddWaterInMachine;
+  payload: WaterStatus;
 }
 
-export interface TurnOnMachineAction {
-  type: ActionTypes.TurnOnMachine;
-  payload: StatusMachine;
-}
-
-export interface TurnOffMachineAction {
-  type: ActionTypes.TurnOffMachine;
-  payload: StatusMachine;
-}
-
-export const getTurnOnMachine = () => {
+export const getWaterInMachine = () => {
   return async (dispatch: Dispatch) => {
     const response = await getStatusMachine();
-    dispatch<GetTurnOnMachineAction>({
-      type: ActionTypes.GetTurnOnMachine,
-      payload: response.data,
+    dispatch<GetWaterInMachineAction>({
+      type: ActionTypes.GetWaterInMachine,
     });
   };
 };
 
-export const turnOnMachine = () => {
+export const setWaterInMachine = () => {
   return async (dispatch: Dispatch) => {
-    const response = await patchStatusMachine({ turnedOn: true });
-    dispatch<TurnOnMachineAction>({
-      type: ActionTypes.TurnOnMachine,
-      payload: response.data,
-    });
-  };
-};
-
-export const turnOffMachine = () => {
-  return async (dispatch: Dispatch) => {
-    const response = await patchStatusMachine({ turnedOn: false });
-    dispatch<TurnOffMachineAction>({
-      type: ActionTypes.TurnOffMachine,
+    const response = await getStatusMachine();
+    dispatch<SetWaterInMachineAction>({
+      type: ActionTypes.SetWaterInMachine,
       payload: response.data,
     });
   };
