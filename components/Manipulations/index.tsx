@@ -38,7 +38,7 @@ const Manipulations = () => {
       </SectionBlock>
       <SectionBlock>
         <div className={c.inner}>
-          <Label> {turnedOn ? "Turn on" : "Turn off"} machine</Label>
+          <Label> Machine is {turnedOn ? "turned on" : "turned off"} </Label>
           <Button
             onClick={() => {
               dispatch(turnedOn ? turnOffMachine() : turnOnMachine());
