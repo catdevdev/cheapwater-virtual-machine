@@ -20,7 +20,7 @@ import Sensors from "../components/Sensors";
 
 const Index = () => {
   return (
-    <Container>
+    <Container style={{ marginTop: 22 }}>
       <div className={c.firstRow}>
         <div className={c.firstColumn}>
           <PourWater />
