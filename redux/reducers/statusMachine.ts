@@ -1,9 +1,5 @@
 import { StatusMachine } from "./../api/statusMachine";
-import {
-  TurnOnMachineAction,
-  TurnOffMachineAction,
-  GetTurnOnMachineAction,
-} from "../actions";
+
 import { ActionTypes, Action } from "../actions/statusMachine/types";
 
 export const statusMachine = (

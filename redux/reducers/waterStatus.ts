@@ -1,10 +1,5 @@
 import { WaterStatus } from "./../api/waterStatus";
 import {
-  TurnOnMachineAction,
-  TurnOffMachineAction,
-  GetTurnOnMachineAction,
-} from "../actions";
-import {
   GetWaterInMachine,
   SetWaterInMachine,
   AddWaterInMachine,
