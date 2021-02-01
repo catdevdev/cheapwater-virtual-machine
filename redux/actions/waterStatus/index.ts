@@ -1,12 +1,12 @@
 /* imports */
 import { Dispatch } from "redux";
 /* api */
-import { getWaterStatus } from "../../api/waterStatus";
+import { getWaterStatus, patchWaterStatus } from "../../api/waterStatus";
 /* types */
 import {
   GetWaterInMachine,
-  AddWaterInMachine,
   SetWaterInMachine,
+  AddWaterInMachine,
 } from "./types";
 import { WaterStatus } from "../../api/waterStatus";
 
@@ -14,14 +14,14 @@ export interface GetWaterInMachineAction {
   type: typeof GetWaterInMachine;
   payload: WaterStatus;
 }
-// export interface SetWaterInMachineAction {
-//   type: ActionTypes.SetWaterInMachine;
-//   payload: WaterStatus;
-// }
-// export interface AddWaterInMachineAction {
-//   type: ActionTypes.AddWaterInMachine;
-//   payload: WaterStatus;
-// }
+export interface SetWaterInMachineAction {
+  type: typeof SetWaterInMachine;
+  payload: WaterStatus;
+}
+export interface AddWaterInMachineAction {
+  type: typeof AddWaterInMachine;
+  payload: WaterStatus;
+}
 
 export const getWaterInMachine = () => {
   return async (dispatch: Dispatch) => {
@@ -33,12 +33,25 @@ export const getWaterInMachine = () => {
   };
 };
 
-// export const setWaterInMachine = () => {
-//   return async (dispatch: Dispatch) => {
-//     const response = await getStatusMachine();
-//     dispatch<SetWaterInMachineAction>({
-//       type: ActionTypes.SetWaterInMachine,
-//       payload: response.data,
-//     });
-//   };
-// };
+export const setWaterInMachine = (waterQuantity: number) => {
+  return async (dispatch: Dispatch) => {
+    const response = await patchWaterStatus({ waterQuantity });
+    dispatch<SetWaterInMachineAction>({
+      type: SetWaterInMachine,
+      payload: response.data,
+    });
+  };
+};
+
+export const addWaterInMachine = (waterQuantity: number) => {
+  return async (dispatch: Dispatch) => {
+    const waterStatus = await getWaterStatus();
+    const response = await patchWaterStatus({
+      waterQuantity: waterStatus.data.waterQuantity + waterQuantity,
+    });
+    dispatch<AddWaterInMachineAction>({
+      type: AddWaterInMachine,
+      payload: response.data,
+    });
+  };
+};
