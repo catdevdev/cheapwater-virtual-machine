@@ -1,21 +1,25 @@
-import { StatusMachine } from "./../api/statusMachine";
+import { WaterStatus } from "./../api/waterStatus";
 import {
   TurnOnMachineAction,
   TurnOffMachineAction,
   GetTurnOnMachineAction,
 } from "../actions";
-import { ActionTypes, Action } from "../actions/statusMachine/types";
-
-export const statusMachine = (
-  state: StatusMachine = { turnedOn: false },
+import {
+  GetWaterInMachine,
+  SetWaterInMachine,
+  AddWaterInMachine,
+  Action,
+} from "../actions/waterStatus/types";
+export const waterStatus = (
+  state: WaterStatus = { waterQuantity: null },
   action: Action
 ) => {
   switch (action.type) {
-    case ActionTypes.GetTurnOnMachine:
+    case GetWaterInMachine:
       return action.payload;
-    case ActionTypes.TurnOnMachine:
+    case SetWaterInMachine:
       return action.payload;
-    case ActionTypes.TurnOffMachine:
+    case AddWaterInMachine:
       return action.payload;
     default:
       return state;

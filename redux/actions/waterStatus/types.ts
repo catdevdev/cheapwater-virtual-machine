@@ -14,10 +14,11 @@ export const GetWaterInMachine = "GET_WATER_IN_MACHINE";
 
 import {
   GetWaterInMachineAction,
-  // SetWaterInMachineAction,
-  // AddWaterInMachineAction,
+  SetWaterInMachineAction,
+  AddWaterInMachineAction,
 } from "./index";
 
-export type Action = GetWaterInMachineAction;
-// | SetWaterInMachineAction
-// | AddWaterInMachineAction;
+export type Action =
+  | GetWaterInMachineAction
+  | SetWaterInMachineAction
+  | AddWaterInMachineAction;
