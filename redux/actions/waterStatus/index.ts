@@ -23,13 +23,14 @@ export interface AddWaterInMachineAction {
   payload: WaterStatus;
 }
 
-export const getWaterInMachine = () => {
+export const getWaterInMachine = (callback: () => void) => {
   return async (dispatch: Dispatch) => {
     const response = await getWaterStatus();
     dispatch<GetWaterInMachineAction>({
       type: GetWaterInMachine,
       payload: response.data,
     });
+    callback();
   };
 };
 

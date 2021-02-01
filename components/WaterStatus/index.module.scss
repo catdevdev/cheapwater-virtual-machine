@@ -5,11 +5,20 @@
 
   display: flex;
   align-items: flex-end;
+
+  position: relative;
+
+  .spinner {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
 }
 .fill {
   flex: 1;
   background: #67c8ff;
-  height: 10%;
+  // height: 10%;
   transition: 1s height ease;
 }
 

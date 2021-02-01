@@ -3,7 +3,7 @@
     "turnedOn": true
   },
   "waterStatus": {
-    "waterQuantity": 1000
+    "waterQuantity": 10000
   },
   "window": {
     "inWindowCup": false,
