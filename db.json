@@ -1,9 +1,9 @@
 {
   "statusMachine": {
-    "turnedOn": true
+    "turnedOn": false
   },
   "waterStatus": {
-    "waterQuantity": 21600
+    "waterQuantity": 22200
   },
   "window": {
     "inWindowCup": false,
@@ -20,6 +20,50 @@
           "time": "11:32:34PM",
           "key": "glassInWindow",
           "value": true
+        }
+      ]
+    },
+    "vibrationSensor": {
+      "log": [
+        {
+          "time": "11:32:34PM",
+          "key": "splosh",
+          "value": true
+        }
+      ]
+    },
+    "rainSensor": {
+      "log": [
+        {
+          "time": "11:32:34PM",
+          "key": "vibration",
+          "value": true
+        }
+      ]
+    },
+    "montionSensor": {
+      "log": [
+        {
+          "time": "11:32:34PM",
+          "key": "montion",
+          "value": true
+        }
+      ]
+    },
+    "waterCounter": {
+      "log": [
+        {
+          "time": "11:32:34PM",
+          "objects": [
+            {
+              "key": "flowRate",
+              "value": "20ml/s"
+            },
+            {
+              "key": "liquidQuantity",
+              "value": "20"
+            }
+          ]
         }
       ]
     }
