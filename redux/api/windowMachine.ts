@@ -2,14 +2,14 @@
 import axios from "./index";
 
 export interface WindowMachine {
-  inWindowCup: boolean;
-  cupSize: number;
-  amountOfWaterInCup: number;
-  splosh: number;
+  inWindowCup?: boolean;
+  cupSize?: number;
+  amountOfWaterInCup?: number;
+  splosh?: number;
 }
 
-export const patchStatusMachine = (status: StatusMachine) =>
-  axios.patch<StatusMachine>("/statusMachine", status);
-
-export const getStatusMachine = () =>
-  axios.get<StatusMachine>("/statusMachine");
+export const patchWindowMachine = (data: WindowMachine) =>
+  axios.patch<WindowMachine>("/windowMachine", data);
+  
+export const getWindowMachine = () =>
+  axios.get<WindowMachine>("/windowMachine");
