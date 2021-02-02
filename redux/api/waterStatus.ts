@@ -1,3 +1,4 @@
+/* import */
 import axios from "./index";
 
 export interface WaterStatus {

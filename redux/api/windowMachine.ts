@@ -1,8 +1,11 @@
 /* import */
 import axios from "./index";
 
-export interface StatusMachine {
-  turnedOn: boolean;
+export interface WindowMachine {
+  inWindowCup: boolean;
+  cupSize: number;
+  amountOfWaterInCup: number;
+  splosh: number;
 }
 
 export const patchStatusMachine = (status: StatusMachine) =>

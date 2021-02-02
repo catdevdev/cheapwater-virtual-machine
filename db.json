@@ -5,7 +5,7 @@
   "waterStatus": {
     "waterQuantity": 2000
   },
-  "window": {
+  "windowMachine": {
     "inWindowCup": false,
     "cupSize": 200,
     "amountOfWaterInCup": 0,
