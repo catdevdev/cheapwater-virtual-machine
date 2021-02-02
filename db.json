@@ -3,11 +3,12 @@
     "turnedOn": false
   },
   "waterStatus": {
-    "waterQuantity": 22200
+    "waterQuantity": 2000
   },
   "window": {
     "inWindowCup": false,
     "cupSize": 200,
+    "amountOfWaterInCup": 0,
     "splosh": 10
   },
   "qrCode": {

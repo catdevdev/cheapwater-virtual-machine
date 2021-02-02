@@ -17,6 +17,7 @@
           border-radius: 4px;
 
           background: rgb(187, 25, 187);
+          cursor: pointer;
         }
         .active {
           border: 5px solid #64b5ff;
@@ -39,6 +40,27 @@
         margin: 0;
         padding: 0;
         text-align: center;
+      }
+      .containerForImg {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        .imgCupInWindow {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+        }
+        .fill {
+          position: absolute;
+          width: 100%;
+          height: 40%;
+          background: #67c7ffa3;
+          left: 0;
+          bottom: 0;
+        }
       }
     }
     .missingWater {
