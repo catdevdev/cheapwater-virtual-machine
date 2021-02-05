@@ -5,7 +5,7 @@ export interface WindowMachine {
   inWindowCup?: boolean;
   cupSize?: number;
   amountOfWaterInCup?: number;
-  splosh?: number;
+  splash?: number;
 }
 
 export const patchWindowMachine = (data: WindowMachine) =>
