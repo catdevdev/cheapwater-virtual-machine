@@ -4,55 +4,116 @@ import { Dispatch } from "redux";
 import { getWindowMachine, patchWindowMachine } from "../../api/windowMachine";
 /* types */
 import {
-  GetWaterInMachine,
-  SetWaterInMachine,
-  AddWaterInMachine,
+  GetWindowMachine,
+  PutPlasticCup,
+  RemovePlasticCup,
+  AddWaterInToPlasticCup,
+  AddWaterInToSplashContainer,
+  ResetWaterInSplashContainer,
 } from "./types";
-import { WaterStatus } from "../../api/waterStatus";
+import { WindowMachine } from "../../api/windowMachine";
 
 export interface GetWindowMachineAction {
-  type: typeof GetWaterInMachine;
-  payload: WaterStatus;
+  type: typeof GetWindowMachine;
+  payload: WindowMachine;
 }
-export interface SetWindowCupInWindowAction {
-  type: typeof SetWaterInMachine;
-  payload: WaterStatus;
+export interface PutPlasticCupAction {
+  type: typeof PutPlasticCup;
+  payload: WindowMachine;
 }
-export interface AddWaterInMachineAction {
-  type: typeof AddWaterInMachine;
-  payload: WaterStatus;
+export interface RemovePlasticCupAction {
+  type: typeof RemovePlasticCup;
+  payload: WindowMachine;
+}
+export interface AddWaterInToPlasticCupAction {
+  type: typeof AddWaterInToPlasticCup;
+  payload: WindowMachine;
+}
+export interface AddWaterInToSplashContainerAction {
+  type: typeof AddWaterInToSplashContainer;
+  payload: WindowMachine;
+}
+export interface ResetWaterInSplashContainerAction {
+  type: typeof ResetWaterInSplashContainer;
+  payload: WindowMachine;
 }
 
-export const getWaterInMachine = (callback: () => void) => {
+/* to refuctor */
+export const getWindowMachineObject = (size: number) => {
   return async (dispatch: Dispatch) => {
-    const response = await getWaterStatus();
-    dispatch<GetWaterInMachineAction>({
-      type: GetWaterInMachine,
+    const response = await getWindowMachine();
+    dispatch<GetWindowMachineAction>({
+      type: GetWindowMachine,
       payload: response.data,
     });
-    callback();
+    // callback();
+  };
+};
+export const putPlasticCup = (size: number) => {
+  return async (dispatch: Dispatch) => {
+    const response = await patchWindowMachine({
+      inWindowCup: true,
+      cupSize: size,
+    });
+    dispatch<PutPlasticCupAction>({
+      type: PutPlasticCup,
+      payload: response.data,
+    });
+    // callback();
   };
 };
 
-export const setWaterInMachine = (waterQuantity: number) => {
+export const removePlasticCup = () => {
   return async (dispatch: Dispatch) => {
-    const response = await patchWaterStatus({ waterQuantity });
-    dispatch<SetWaterInMachineAction>({
-      type: SetWaterInMachine,
+    const response = await patchWindowMachine({
+      inWindowCup: false,
+      cupSize: null,
+    });
+    dispatch<RemovePlasticCupAction>({
+      type: RemovePlasticCup,
       payload: response.data,
     });
+    // callback();
   };
 };
 
-export const addWaterInMachine = (waterQuantity: number) => {
+export const addWaterInToPlasticCup = (waterQuantity: number) => {
   return async (dispatch: Dispatch) => {
-    const waterStatus = await getWaterStatus();
-    const response = await patchWaterStatus({
-      waterQuantity: waterStatus.data.waterQuantity + waterQuantity,
+    const windowMachine = await getWindowMachine();
+    const response = await patchWindowMachine({
+      amountOfWaterInCup: windowMachine.data.amountOfWaterInCup + waterQuantity,
     });
-    dispatch<AddWaterInMachineAction>({
-      type: AddWaterInMachine,
+    dispatch<AddWaterInToPlasticCupAction>({
+      type: AddWaterInToPlasticCup,
       payload: response.data,
     });
+    // callback();
+  };
+};
+
+export const addWaterInToSplashContainer = (waterQuantity: number) => {
+  return async (dispatch: Dispatch) => {
+    const windowMachine = await getWindowMachine();
+    const response = await patchWindowMachine({
+      splash: windowMachine.data.splash + waterQuantity,
+    });
+    dispatch<AddWaterInToSplashContainerAction>({
+      type: AddWaterInToSplashContainer,
+      payload: response.data,
+    });
+    // callback();
+  };
+};
+
+export const resetWaterInSplashContainer = (waterQuantity: number) => {
+  return async (dispatch: Dispatch) => {
+    const response = await patchWindowMachine({
+      splash: 0,
+    });
+    dispatch<ResetWaterInSplashContainerAction>({
+      type: ResetWaterInSplashContainer,
+      payload: response.data,
+    });
+    // callback();
   };
 };
