@@ -3,13 +3,13 @@
     "turnedOn": true
   },
   "waterStatus": {
-    "waterQuantity": 56000
+    "waterQuantity": 30600
   },
   "windowMachine": {
-    "inWindowCup": false,
-    "cupSize": 200,
+    "inWindowCup": true,
+    "cupSize": 400,
     "amountOfWaterInCup": 0,
-    "splash": 10
+    "splash": 0
   },
   "qrCode": {
     "code": "https://cheapwater.net/qrcode_redirect/4d450f18-94b9-47da-adfa-11320348c9d1"

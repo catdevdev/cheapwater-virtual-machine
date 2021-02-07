@@ -39,7 +39,7 @@ export interface ResetWaterInSplashContainerAction {
 }
 
 /* to refuctor */
-export const getWindowMachineObject = (size: number) => {
+export const getWindowMachineObject = () => {
   return async (dispatch: Dispatch) => {
     const response = await getWindowMachine();
     dispatch<GetWindowMachineAction>({
@@ -107,7 +107,7 @@ export const addWaterInToSplashContainer = (waterQuantity: number) => {
   };
 };
 
-export const resetWaterInSplashContainer = (waterQuantity: number) => {
+export const resetWaterInSplashContainer = () => {
   return async (dispatch: Dispatch) => {
     const response = await patchWindowMachine({
       splash: 0,
