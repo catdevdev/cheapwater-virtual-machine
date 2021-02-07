@@ -1,4 +1,5 @@
 /* imports */
+import { useEffect } from "react";
 import c from "./index.module.scss";
 /* UI */
 /* 0 */
@@ -21,6 +22,10 @@ const Manipulations = () => {
     (state) => state.statusMachine.turnedOn
   );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTurnOnMachine());
+  }, []);
 
   return (
     <div className={c.wrapper}>

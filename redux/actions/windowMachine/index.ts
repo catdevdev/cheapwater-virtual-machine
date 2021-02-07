@@ -54,6 +54,7 @@ export const putPlasticCup = (size: number) => {
     const response = await patchWindowMachine({
       inWindowCup: true,
       cupSize: size,
+      amountOfWaterInCup: 0
     });
     dispatch<PutPlasticCupAction>({
       type: PutPlasticCup,
@@ -68,6 +69,7 @@ export const removePlasticCup = () => {
     const response = await patchWindowMachine({
       inWindowCup: false,
       cupSize: null,
+      amountOfWaterInCup: null
     });
     dispatch<RemovePlasticCupAction>({
       type: RemovePlasticCup,
